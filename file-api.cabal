@@ -1,0 +1,92 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1a9a70a29e7cf4e200f3657a77ae726072e1480fec3259354c1f84ba4debf164
+
+name:           file-api
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/file-api#readme>
+homepage:       https://github.com/githubuser/file-api#readme
+bug-reports:    https://github.com/githubuser/file-api/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/file-api
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_file_api
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , http-api-data
+    , servant
+    , servant-multipart
+    , servant-server
+    , text
+    , transformers
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable file-api-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_file_api
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , file-api
+    , http-api-data
+    , servant
+    , servant-multipart
+    , servant-server
+    , text
+    , transformers
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite file-api-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_file_api
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , file-api
+    , http-api-data
+    , servant
+    , servant-multipart
+    , servant-server
+    , text
+    , transformers
+    , wai
+    , warp
+  default-language: Haskell2010
